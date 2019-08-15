@@ -23,6 +23,7 @@
       </v-btn>
     </template>
   </v-app-bar>
+  
 </template>
 
 <script>
@@ -30,7 +31,7 @@ export default {
   data() {
     return {
       links: [
-        { title: "Home", path: "/" },
+        { title: "Home", path: "home2" },
         { title: "Brands", path: "detail" },
         { title: "About", path: "about" }
       ]
