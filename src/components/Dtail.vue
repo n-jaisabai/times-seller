@@ -8,7 +8,7 @@
               src="../assets/Logo1.png"
               contain
               height="400px"
-            > 
+            >
             </v-img>
             </v-card>
           </v-col>

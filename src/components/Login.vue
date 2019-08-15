@@ -6,6 +6,5 @@
         max-width="500px"
         transition="dialog-transition"
     >
-        
     </v-dialog>
 </template>
