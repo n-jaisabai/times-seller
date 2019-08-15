@@ -1,11 +1,11 @@
 <template>
-    <v-container class="grey lighten-5" sm>
+    <v-container class="grey lighten-5">
         <v-row> 
         <v-row no-gutters >
           <v-col cols="8" sm="6">
             <v-card flat>
             <v-img
-              src="../images/vr.png"
+              src="../assets/Logo1.png"
               contain
               height="400px"
             > 
