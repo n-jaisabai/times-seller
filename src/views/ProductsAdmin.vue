@@ -11,9 +11,30 @@
           v-for="(product, index) in products"
           :key="index"
           class="pa-2"
-          @click="gotoShowDetail(product.product_id)"
         >
-          <v-card flat class="fill-height pa-5">
+         <v-hover v-slot:default="{ hover }">
+          <v-card flat class="fill-height pa-5" :elevation="hover ? 8 : 0">
+            <v-layout>
+              <v-flex offset-xs10>
+                  <v-menu transition="slide-y-transition" bottom >
+                    <template v-slot:activator="{ on }">
+                      <v-btn  v-on="on" fab small outlined color="grey darken-1">
+                        <v-icon>mdi-database-settings</v-icon>
+                      </v-btn>
+                    </template>
+                    <v-list>
+                      <v-list-item @click="">
+                        <v-list-item-title ><v-icon>mdi-database-edit</v-icon>แก้ไข</v-list-item-title>
+                      </v-list-item>
+                      <v-list-item @click="">
+                        <v-list-item-title><v-icon>mdi-eraser</v-icon>ลบ</v-list-item-title>
+                      </v-list-item>
+                    </v-list>
+                  </v-menu>
+              </v-flex>
+              
+            </v-layout>
+            
             <v-img :src="product.links[0]" contain height="200"></v-img>
             <v-list-item three-line>
               <v-list-item-content>
@@ -28,6 +49,7 @@
               >ราคา {{product.price}} บาท</v-list-item-title>
             </v-list-item>
           </v-card>
+         </v-hover>
         </v-col>
       </v-row>
     </v-layout>
