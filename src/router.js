@@ -41,9 +41,19 @@ export default new Router({
       component: Home,
       children: [
         {
-          path: 'about',
-          name: 'about',
-          component: About
+          path: 'seiko',
+          name: 'seiko',
+          redirect: '/categories'
+        },
+        {
+          path: 'casio',
+          name: 'casio',
+          redirect: '/categories'
+        },
+        {
+          path: 'rolex',
+          name: 'rolex',
+          redirect: '/categories'
         },
         {
           path: ':id',
@@ -71,11 +81,11 @@ export default new Router({
           name: 'users'
         }
       ]
+    },
+    {
+      path: '*',
+      name: '404',
+      redirect: '/'
     }
-    // {
-    //   path: '*',
-    //   name: '404',
-    //   redirect: '/'
-    // }
   ]
 })
