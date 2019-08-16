@@ -66,6 +66,9 @@ export default {
   created() {
     this.getData();
   },
+  mounted() {
+      EventBus.$on("getdata", this.getData);
+  },
   data() {
     return {
       products: []
