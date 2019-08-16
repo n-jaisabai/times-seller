@@ -1,6 +1,11 @@
 <template>
   <v-container class="grey lighten-5">
     <v-layout row>
+      <v-img src="https://www.fratellowatches.com/wp-content/uploads/2019/04/Rolex-Submariner-2.jpg" height="200" max-height="200" max-width="auto" 
+      gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+      > <v-layout row wrap align-center justify-center fill-height>
+        <h1 class="display-4 white--text "  > All Watches</h1>
+      </v-layout></v-img>
       <v-row no-gutters>
         
         <v-col
@@ -75,3 +80,4 @@ export default {
   }
 };
 </script>
+
