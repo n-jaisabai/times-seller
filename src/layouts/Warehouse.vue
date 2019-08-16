@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-card>
+    <v-card flat>
       <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" app>
         <v-list-item>
           <v-list-item-avatar class="grey darken-2">
@@ -27,7 +27,7 @@
         </v-list>
       </v-navigation-drawer>
 
-      <v-content class="grey lighten-5">
+      <v-content class="grey lighten-5 flat">
         <router-view />
       </v-content>
     </v-card>

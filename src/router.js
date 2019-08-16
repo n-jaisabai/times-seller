@@ -6,7 +6,7 @@ import Detail from './components/Detail.vue'
 import About from './views/About.vue'
 import Categories from './views/Categories'
 import ProductsAdmin from './views/ProductsAdmin'
-import Singin from './components/Singin'
+import Signin from './layouts/Signin'
 
 Vue.use(Router)
 
@@ -15,9 +15,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/singin',
-      name: 'singin',
-      component: Singin
+      path: '/signin',
+      name: 'signin',
+      component: Signin
     },
     {
       path: '/',

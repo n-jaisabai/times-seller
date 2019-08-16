@@ -23,10 +23,10 @@
                       </v-btn>
                     </template>
                     <v-list>
-                      <v-list-item @click="">
+                      <v-list-item @click="editItem(product)">
                         <v-list-item-title ><v-icon>mdi-database-edit</v-icon>แก้ไข</v-list-item-title>
                       </v-list-item>
-                      <v-list-item @click="">
+                      <v-list-item @click="deleteItem(product)">
                         <v-list-item-title><v-icon>mdi-eraser</v-icon>ลบ</v-list-item-title>
                       </v-list-item>
                     </v-list>
@@ -98,6 +98,21 @@ export default {
     },
     newItem() {
       EventBus.$emit("newItem");
+    },
+    editItem(item) {
+        EventBus.$emit("editItem", item);
+    },
+    async deleteItem (item) {
+      if (confirm('Are you sure you want to delete this item?')) {
+        try {
+            var { data } = await this.axios.delete(
+              'http://127.0.0.1:5000/api/1.0/product/' + item.product_id)
+            this.getData()
+        } catch (error) {
+          console.log(error.message)
+           this.getData()
+        }
+      }
     }
   }
 };
