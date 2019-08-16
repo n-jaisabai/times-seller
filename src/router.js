@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './layouts/Home.vue'
-import Detail from './components/Dtail.vue'
+import Admin from './layouts/Admin.vue'
+import Detail from './components/Detail.vue'
 import About from './views/About.vue'
 import Categories from './views/Categories'
 
@@ -43,6 +44,11 @@ export default new Router({
           component: Detail
         }
       ]
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     }
     // {
     //   path: '*',
