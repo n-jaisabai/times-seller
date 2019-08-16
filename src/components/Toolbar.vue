@@ -34,7 +34,7 @@
         </template>
 
         <v-card class="pa-3 text-center">
-            <v-btn width="200" color="white" flat to="/signin">Sign in</v-btn>
+            <v-btn width="200" color="light-green lighten-1" dark flat to="/signin">Sign in</v-btn>
             <p style="font-size: 12px; margin-bottom: 0; margin-top: 2px">New customer? <router-link to="/register">Start here</router-link>.</p>
         </v-card>
       </v-menu>

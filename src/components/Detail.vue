@@ -1,6 +1,22 @@
 <template>
-  <v-container class="grey lighten-5">
-    <v-row>
+  <v-container class="white pa-5" justify-center>
+    <v-layout row wrap justify-center fill-height align-center>
+      <v-flex xs12 md6>
+        <v-img :src="product.links[0]" contain height="400px"></v-img>
+      </v-flex>
+      <v-flex xs12 md6>
+        <p class="display-1 text--primary">{{product.brand}}</p>
+        <div class="text--primary">{{product.model}}</div>
+        <br />
+        <p class="display-1 text--primary">ราคา {{product.price}} บาท</p>
+        <v-btn outlined width="200" height="50">ซื้อ</v-btn>
+      </v-flex>
+      <v-flex xs12 md12 pa-5>
+        <p class="font-weight-black">รายละเอียดสินค้า</p>
+        <p class="font-weight-regular">{{product.description}}</p>
+      </v-flex>
+    </v-layout>
+    <!-- <v-row class="pa-5">
       <v-row no-gutters>
         <v-col cols="8" sm="6">
           <v-card flat>
@@ -10,11 +26,9 @@
         <v-col cols="4" sm="6">
           <v-card flat height="400">
             <v-card-text>
-              <p class="display-1 text--primary">SEIKO</p>
-              <p class="display-1 text--primary">PROSPEX</p>
+              <p class="display-1 text--primary">{{product.brand}}</p>
               <div class="text--primary">
-                นาฬิกาข้อมือระบบ Solar
-                <br />รุ่น SBDL035J
+                {{product.model}}
               </div>
               <p class="display-1 text--primary">ราคา {{product.price}} บาท</p>
             </v-card-text>
@@ -24,31 +38,10 @@
         <v-col cols="12" sm="12">
           <v-card flat>
             <v-card-text>
-              <div>
-                <p class="font-weight-black">ข้อมูลจำเพาะของสินค้า</p>
-                <tr>
-                  <td>
-                    <p class="font-weight-bold">ยี่ห้อ:</p>
-                  </td>
-                  <td>
-                    <p class="font-weight-regular">Seiko(ไซโก้)</p>
-                  </td>
-                </tr>
-              </div>
-              <div>
                 <p class="font-weight-black">รายละเอียดสินค้า</p>
                 <tr>
                   <p class="font-weight-regular">
-                    นาฬิกา SEIKO PROSPEX Solar Diver Diver 200m. รุ่น SBDL035J
-                    <br />Seiko Prospex Tuna Lowercase Limited Edition 3000 pcs.
-                    <br />Outer Case ผลิตจากยาง Polyurethane
-                    <br />กลไก V175 Solar Chronograph ชาร์จพลังงานจากแสงได้ทุกประเภท
-                    <br />จับเวลาที่ความละเอียด 1/5 วินาที ต่อเนื่องสูงสุด 60 นาที
-                    <br />ตัวเรือนและสาย Stainless steel black IP coating
-                    <br />ตัวเรือนขนาด 47 มิลลิเมตร
-                    <br />ประสิทธิภาพการกันน้ำ 200 เมตร
-                    <br />กระจกหน้าปัด Hardlex crystal
-                    <br />สำรองพลังงานได้นานสูงสุดถึง 6 เดือน
+                    {{product.description}}
                   </p>
                 </tr>
               </div>
@@ -56,7 +49,7 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-row>
+    </v-row>-->
   </v-container>
 </template>
 
