@@ -5,6 +5,7 @@ import Admin from './layouts/Admin.vue'
 import Detail from './components/Detail.vue'
 import About from './views/About.vue'
 import Categories from './views/Categories'
+import Singin from './components/Singin'
 
 Vue.use(Router)
 
@@ -12,6 +13,11 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path: '/singin',
+      name: 'singin',
+      component: Singin
+    },
     {
       path: '/',
       name: 'home',

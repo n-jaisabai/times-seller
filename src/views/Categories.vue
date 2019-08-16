@@ -2,6 +2,7 @@
   <v-container class="grey lighten-5">
     <v-layout row>
       <v-row no-gutters>
+        
         <v-col
           cols="8"
           sm="3"
@@ -9,9 +10,13 @@
           v-for="(product, index) in products"
           :key="index"
           class="pa-2"
-          @click="gotoShowDetail(product.product_id)"
-        >
-          <v-card flat class="fill-height pa-5">
+         
+        >  
+        
+        <v-hover v-slot:default="{ hover }">
+          
+          <v-card flat class="fill-height pa-5" :elevation="hover ? 8 : 0"  @click="gotoShowDetail(product.product_id)">
+            
             <v-img :src="product.links[0]" contain height="200"></v-img>
             <v-list-item three-line>
               <v-list-item-content>
@@ -22,7 +27,11 @@
             <v-list-item>
                 <v-list-item-title class="title mb-1 text-center orange--text text--lighten-1" color="">ราคา {{product.price}} บาท</v-list-item-title>
             </v-list-item>
+            
           </v-card>
+          
+          </v-hover>
+          
         </v-col>
       </v-row>
     </v-layout>
