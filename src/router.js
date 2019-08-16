@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './layouts/Home.vue'
-import Admin from './layouts/Admin.vue'
+import Warehouse from './layouts/Warehouse.vue'
 import Detail from './components/Detail.vue'
 import About from './views/About.vue'
 import Categories from './views/Categories'
+import ProductsAdmin from './views/ProductsAdmin'
 import Singin from './components/Singin'
 
 Vue.use(Router)
@@ -52,9 +53,24 @@ export default new Router({
       ]
     },
     {
-      path: '/admin',
-      name: 'admin',
-      component: Admin
+      path: '/warehouse',
+      name: 'warehouse',
+      component: Warehouse,
+      children: [
+        {
+          path: 'home',
+          name: 'home'
+        },
+        {
+          path: 'products',
+          name: 'products',
+          component: ProductsAdmin
+        },
+        {
+          path: 'users',
+          name: 'users'
+        }
+      ]
     }
     // {
     //   path: '*',
