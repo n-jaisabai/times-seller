@@ -51,8 +51,8 @@ export default {
     return {
       items: [
         { title: "SEIKO", path: "/categories/seiko" },
-        { title: "Brands", path: "/categories/detail" },
-        { title: "About", path: "/categories/about" }
+        { title: "CASIO", path: "/categories/casio" },
+        { title: "ROLEX", path: "/categories/rolex" }
       ],
       account: 1,
       accounts: [
