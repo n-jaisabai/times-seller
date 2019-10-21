@@ -10,8 +10,8 @@
 
 <script>
 export default {
-    components: {
-        Toolbar: () => import('@/components/Toolbar')
-    }
+  components: {
+    Toolbar: () => import('@/components/Toolbar')
+  }
 }
 </script>
