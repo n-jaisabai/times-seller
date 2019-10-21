@@ -70,53 +70,53 @@
 </template>
 
 <script>
-import { EventBus } from "@/EventBus";
+import { EventBus } from '@/EventBus'
 export default {
-  data() {
+  data () {
     return {
       dialog: false,
-      formTitle: "",
+      formTitle: '',
       editedItem: {},
-      action: "",
+      action: '',
       chips: [],
-      items: ["male", "female"]
-    };
+      items: ['male', 'female']
+    }
   },
-  mounted() {
-    EventBus.$on("newItem", this.newItem);
-    EventBus.$on("editItem", this.editItem);
+  mounted () {
+    EventBus.$on('newItem', this.newItem)
+    EventBus.$on('editItem', this.editItem)
   },
   methods: {
-    remove(item) {
-      this.chips.splice(this.chips.indexOf(item), 1);
-      this.chips = [...this.chips];
+    remove (item) {
+      this.chips.splice(this.chips.indexOf(item), 1)
+      this.chips = [...this.chips]
     },
-    close() {
-      this.dialog = false;
+    close () {
+      this.dialog = false
     },
-    newItem() {
-      this.formTitle = "New Product";
-      this.action = "newItem";
-      this.dialog = true;
+    newItem () {
+      this.formTitle = 'New Product'
+      this.action = 'newItem'
+      this.dialog = true
       this.editedItem = {
-        brand: "",
-        model: "",
-        description: "",
-        links: [""],
-        price: ""
-      };
+        brand: '',
+        model: '',
+        description: '',
+        links: [''],
+        price: ''
+      }
     },
-    editItem(item) {
-      this.formTitle = "Edit Product";
-      this.action = "editItem";
-      this.dialog = true;
-      console.log(item);
+    editItem (item) {
+      this.formTitle = 'Edit Product'
+      this.action = 'editItem'
+      this.dialog = true
+      console.log(item)
 
-      this.editedItem = item;
-      this.chips = item.tags;
+      this.editedItem = item
+      this.chips = item.tags
     },
-    async save() {
-      if (this.action === "newItem") {
+    async save () {
+      if (this.action === 'newItem') {
         try {
           var item = {
             brand: this.editedItem.brand,
@@ -125,18 +125,18 @@ export default {
             links: [this.editedItem.links[0]],
             price: this.editedItem.price,
             tags: this.chips
-          };
+          }
 
           var { data } = await this.axios.post(
-            "http://127.0.0.1:5000/api/1.0/products",
+            'http://127.0.0.1:5000/api/1.0/products',
             item
-          );
-          EventBus.$emit("getdata");
-          this.dialog = false;
+          )
+          EventBus.$emit('getdata')
+          this.dialog = false
         } catch (error) {
-          console.log(error.message);
+          console.log(error.message)
         }
-      } else if (this.action === "editItem") {
+      } else if (this.action === 'editItem') {
         try {
           var item = {
             brand: this.editedItem.brand,
@@ -145,20 +145,20 @@ export default {
             links: [this.editedItem.links[0]],
             price: this.editedItem.price,
             tags: this.chips
-          };
+          }
           var { data } = await this.axios.put(
-            "http://127.0.0.1:5000/api/1.0/product/" +
+            'http://127.0.0.1:5000/api/1.0/product/' +
               this.editedItem.product_id,
             item
-          );
-          console.log("editedItem", this.editedItem, "DATA: ", data);
-          EventBus.$emit("getdata");
-          this.dialog = false;
+          )
+          console.log('editedItem', this.editedItem, 'DATA: ', data)
+          EventBus.$emit('getdata')
+          this.dialog = false
         } catch (error) {
-          console.log(error.message);
+          console.log(error.message)
         }
       }
     }
   }
-};
+}
 </script>

@@ -47,20 +47,20 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       items: [
-        { title: "SEIKO", path: "/categories/seiko" },
-        { title: "CASIO", path: "/categories/casio" },
-        { title: "ROLEX", path: "/categories/rolex" }
+        { title: 'SEIKO', path: '/categories/seiko' },
+        { title: 'CASIO', path: '/categories/casio' },
+        { title: 'ROLEX', path: '/categories/rolex' }
       ],
       account: 1,
       accounts: [
-        { text: "Real-Time", icon: "mdi-clock" },
-        { text: "Audience", icon: "mdi-account" },
-        { text: "Conversions", icon: "mdi-flag" }
+        { text: 'Real-Time', icon: 'mdi-clock' },
+        { text: 'Audience', icon: 'mdi-account' },
+        { text: 'Conversions', icon: 'mdi-flag' }
       ]
-    };
+    }
   }
-};
+}
 </script>

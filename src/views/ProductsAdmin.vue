@@ -32,9 +32,9 @@
                     </v-list>
                   </v-menu>
               </v-flex>
-              
+
             </v-layout>
-            
+
             <v-img :src="product.links[0]" contain height="200"></v-img>
             <v-list-item three-line>
               <v-list-item-content>
@@ -57,66 +57,66 @@
 </template>
 
 <script>
-import { EventBus } from "@/EventBus";
-import ProductDialog from "../components/ProductDialog";
+import { EventBus } from '@/EventBus'
+import ProductDialog from '../components/ProductDialog'
 export default {
   components: {
     ProductDialog
   },
-  created() {
-    this.getData();
+  created () {
+    this.getData()
   },
-  mounted() {
-      EventBus.$on("getdata", this.getData);
+  mounted () {
+    EventBus.$on('getdata', this.getData)
   },
-  data() {
+  data () {
     return {
       products: []
-    };
+    }
   },
   methods: {
-    async getData() {
+    async getData () {
       try {
         var { data } = await this.axios.get(
-          "http://127.0.0.1:5000/api/1.0/products"
-        );
-        var product = [];
+          'http://127.0.0.1:5000/api/1.0/products'
+        )
+        var product = []
         for (let i = 0; i < data.length; i++) {
-          let x = Object.values(data[i])[0];
-          x["product_id"] = Object.keys(data[i])[0];
-          product.push(Object.values(data[i])[0]);
+          let x = Object.values(data[i])[0]
+          x['product_id'] = Object.keys(data[i])[0]
+          product.push(Object.values(data[i])[0])
         }
-        console.log(product);
-        
-        this.products = product;
+        console.log(product)
+
+        this.products = product
       } catch (error) {
-        console.log(error.message);
+        console.log(error.message)
       }
     },
-    gotoShowDetail(id) {
-      this.$router.push("categories/" + id);
+    gotoShowDetail (id) {
+      this.$router.push('categories/' + id)
     },
-    clickTest(index) {
-      alert("WORK!" + index);
+    clickTest (index) {
+      alert('WORK!' + index)
     },
-    newItem() {
-      EventBus.$emit("newItem");
+    newItem () {
+      EventBus.$emit('newItem')
     },
-    editItem(item) {
-        EventBus.$emit("editItem", item);
+    editItem (item) {
+      EventBus.$emit('editItem', item)
     },
     async deleteItem (item) {
       if (confirm('Are you sure you want to delete this item?')) {
         try {
-            var { data } = await this.axios.delete(
-              'http://127.0.0.1:5000/api/1.0/product/' + item.product_id)
-            this.getData()
+          await this.axios.delete(
+            'http://127.0.0.1:5000/api/1.0/product/' + item.product_id)
+          this.getData()
         } catch (error) {
           console.log(error.message)
-           this.getData()
+          this.getData()
         }
       }
     }
   }
-};
+}
 </script>

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-container justify-center fill-height align-center> 
+    <v-container justify-center fill-height align-center>
       <v-layout row wrap justify-center fill-height align-center>
       <v-card class="pa-5" max-width="500" width="500">
         <v-card-actions class="justify-center">
@@ -30,21 +30,21 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
-      username: "",
-      password: ""
-    };
+      username: '',
+      password: ''
+    }
   },
   methods: {
-    login() {
-      if (this.username === "admin" && this.password === "pass") {
-        alert("Login correct");
-        this.$router.push("/warehouse");
+    login () {
+      if (this.username === 'admin' && this.password === 'pass') {
+        alert('Login correct')
+        this.$router.push('/warehouse')
       } else {
-        alert("Login Fail");
+        alert('Login Fail')
       }
     }
   }
-};
+}
 </script>

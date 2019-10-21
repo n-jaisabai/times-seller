@@ -35,17 +35,17 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        drawer: true,
-        items: [
-          { title: 'Home', icon: 'mdi-home-city', link: "/warehouse/home" },
-          { title: 'Products', icon: 'mdi-shopify', link: "/warehouse/products" },
-          { title: 'Users', icon: 'mdi-account-group-outline', link: "/warehouse/users" },
-        ],
-        mini: true,
-      }
+export default {
+  data () {
+    return {
+      drawer: true,
+      items: [
+        { title: 'Home', icon: 'mdi-home-city', link: '/warehouse/home' },
+        { title: 'Products', icon: 'mdi-shopify', link: '/warehouse/products' },
+        { title: 'Users', icon: 'mdi-account-group-outline', link: '/warehouse/users' }
+      ],
+      mini: true
     }
   }
+}
 </script>

@@ -55,26 +55,26 @@
 
 <script>
 export default {
-  created() {
-    this.getData();
+  created () {
+    this.getData()
   },
-  data() {
+  data () {
     return {
       product: []
-    };
+    }
   },
   methods: {
-    async getData() {
+    async getData () {
       try {
         var { data } = await this.axios.get(
-          "http://127.0.0.1:5000/api/1.0/product/" + this.$route.params.id
-        );
-        console.log(data);
-        this.product = data;
+          'http://127.0.0.1:5000/api/1.0/product/' + this.$route.params.id
+        )
+        console.log(data)
+        this.product = data
       } catch (error) {
-        console.log(error.message);
+        console.log(error.message)
       }
     }
   }
-};
+}
 </script>
